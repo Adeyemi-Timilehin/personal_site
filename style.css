@@ -1,66 +1,187 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,700");
-
+@font-face{
+  font-family: Roboto;
+  src: url("assets/fonts/Roboto/Roboto-Regular.ttf") format("ttf");
+}
+@font-face{
+  font-family: Roboto-bold;
+  src: url("assets/fonts/Roboto/Roboto-BoldItalic.ttf");
+}
+@font-face{
+  font-family: bult;
+  src: url("assets/fonts/biorhyme-bold-webfont.woff") format("woff");
+}
 html,
 body {
   height: 100%;
   width: 100%;
-  font-family: "Poppins", sans-serif;
+  font-family: Roboto, sans-serif;
   color: #222;
 }
-
+.h1{
+  font-family: bult;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.img{
+  width: 36px;
+}
 .navbar {
   padding: 0.8rem;
 }
 
 .navbar-nav li {
   padding-right: 20px;
+  text-transform: uppercase;
 }
 
 .nav-link {
   font-size: 1.1em im !important;
 }
-
-.carousel-inner img {
-  width: 100%;
-  height: 100%;
+.nav-item .active{
+  color: #00aced !important;
 }
-
-.carousel-caption {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.nav-item .nav-link:hover{
+color: #00aced !important;
 }
-
-.carousel-caption h1 {
-  font-size: 500%;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 15px #000;
+.site-banner{
+  position: relative;
+  top: 100px !important;
 }
-
-.carousel-caption h3 {
-  font-size: 200%;
+.site-main .site-banner .site-title h3{
+  padding-top: 35%;
   font-weight: 500;
-  text-shadow: 1px 1px 1px 10px #000;
-  padding-bottom: 1rem;
 }
 
+.site-main .site-banner .site-title h3::after{
+  content: " ";
+  height: 2px;
+  width: 18vw;
+  background: black;
+  display: inline-block;
+  margin-left: 5%;
+  transform: translateY(-10px);
+}
+
+.site-main .site-banner .site-title h1{
+  font-size: 3rem;
+  font-family: Roboto-bold;
+}
+
+.site-main .site-banner .site-title h4{
+  font-size: 1.5rem;
+}
+
+.site-main .site-banner .banner-image > img{
+  padding: 7rem 0;
+  width: 90rem;
+}
+
+.site-main .site-banner {
+  background: url(images/home-banner.png) no-repeat 0% 0%;
+}
+
+/* Brand area */
+
+.site-main .brand-area{
+  padding: 1rem 20rem;
+  margin-bottom: 4rem;
+}
+
+.site-main .brand-area .first-row .col-lg-4{
+  display: flex;
+  justify-content: center;
+}
+
+.site-main .brand-area .first-row .col-lg-4 > .single-brand{
+  border: 1px solid blue;
+  text-align: center;
+  padding: 1.8rem 0rem;
+  margin: .9rem 0;
+  width: 180px;
+  height: 100px;
+  cursor: pointer;
+  transition: transform .4s ease;
+}
+
+.site-main .brand-area .first-row .col-lg-4 > .single-brand > img{
+  width: 50%;
+}
+
+.site-main .brand-area .first-row .col-lg-4 > .single-brand:hover{
+  box-shadow: 1px 2px 3px rgb(122, 122, 190);
+  transform: scale(1.1);
+}
+
+.site-main .brand-area .first-row .col-lg-4 > .single-brand:hover > img{
+  filter: brightness(0.15);
+}
+
+.site-main .brand-area .experience-area{
+  padding-left: 1rem;
+}
+
+.site-main .brand-area .experience-area span{
+  display: block;
+}
+
+.site-main .brand-area .experience-area .years-area{
+  background: url(images/client-info-bg.png) no-repeat 45px 20px;
+  padding: 2rem 0;
+  width: 40rem;
+  height: 18rem;
+  padding-left: 8rem;
+  position: relative;
+}
+
+.site-main .brand-area .experience-area .bg-panel{
+  position: absolute;
+  left: -190px; top: 0%;
+  background: #e029290a;
+  width: 400px;
+  height: 400px;
+  margin-left: 340px;
+  z-index: -1;
+}
+
+.site-main .brand-area .experience-area .years-area .years{
+  font: normal bold 84px/40px Roboto;
+  color: blueviolet;
+  z-index: 2;
+}
+
+.site-main .brand-area .experience-area .years-area h2 > span{
+  font: normal 600 22px/30px Roboto;
+}
+
+.site-main .brand-area .experience-area .call-area{
+  padding-left: 10rem;
+}
+
+
+/* Project Area */
+.site-main .project-area .our-project .img-project a:hover img{
+  filter: brightness(1.1) drop-shadow(1px 5px 5px #7b7d81);
+}
+.pd{
+  background-color: #f1eeee;
+  color: #111;
+  padding: 10px 20px;
+}
+a{
+  text-decoration: none !important;
+}
+/* End Brand Area */
+
+#portfolio{
+  padding-top: 80px;
+}
 .btn-primary {
   background-color: #6648b1;
   border: 1px solid #6648b1;
 }
 
-.btn-primary:hover {
-  background-color: #563d7c;
-  border: 1px solid #563d7c;
-}
-
-.jumbotron {
-  padding: 1rem;
-  border-radius: 0;
-}
-
-.padding {
-  padding-bottom: 2rem;
+.btn-outline-primary a:hover {
+  color: #fff !important;
 }
 
 .welcome {
@@ -75,11 +196,16 @@ body {
   margin-top: 0.3rem;
   margin-bottom: 1rem;
 }
-
+.bootstrap{
+  font-size: 1.5rem;
+ 
+}
 .fa-code {
   color: #e54d26;
 }
-
+.fa-laravel{
+  color: #bb0000;
+}
 .fa-bold {
   color: #563d7c;
 }
@@ -87,11 +213,19 @@ body {
 .fa-css3 {
   color: #2163af;
 }
-
+.fa-js,.fa-php{
+  color: rgba(223, 223, 23, 0.87);
+}
+.fa-react{
+  color:rgb(27, 102, 201);
+}
+.fa-database{
+  color:#4479A1
+}
 .fa-code,
 .fa-bold,
-.fa-css3 {
-  font-size: 4em;
+.fa-css3,.fa-js,.fa-database,.fa-laravel,.fa-php,.fa-react {
+  font-size: 3em;
   margin: 1em;
 }
 
@@ -117,29 +251,62 @@ body {
   color: #00aced;
 }
 
-.fa-google-plus-g {
-  color: #dd4b39;
-}
-
 .fa-instagram {
   color: #517fa4;
 }
 
-.fa-youtube {
-  color: #bb0000;
-}
-
 .fa-facebook:hover,
-.fa-google-plus-g:hover,
-.fa-instagram:hover,
-.fa-youtube {
+.fa-twitter:hover,
+.fa-instagram:hover {
   color: #d5d5d5;
 }
 
-/*---Media Queries --*/
-@media (max-width: 992px) {
+ .about-area .about-title .para{
+  padding: 1rem 7rem;
 }
 
+ .about-area .owl-carousel .client{
+  background: #ffffff10;
+  box-shadow: 1px 1px 2px gray;
+  margin: 3rem 0rem;
+}
+
+.about-area .client .client-img{
+  padding: 2rem;
+}
+
+.about-area .client .about-client{
+  padding-top: 2rem;
+}
+
+ .about-area .client .about-client h4{
+  font: normal 500 21px/ 20px Roboto;
+}
+
+ .about-area .client .about-client p{
+  font-size: 14px;
+}
+
+ .about-area .owl-carousel .owl-item{
+  display: flex;
+  justify-content: center;
+  padding: 0 1.5rem;
+}
+
+/*---Media Queries --*/
+@media only screen and (min-width: 992px) {
+  #contact,#services{
+  padding-top: 100px;
+  }
+  .pd{
+    width: 16.5rem;
+  }
+}
+@media only screen and (min-width:1440px){
+  .pd{
+    width: 23rem;
+  }
+}
 @media (max-width: 768px) {
 }
 
@@ -147,13 +314,6 @@ body {
 }
 
 /*---Firefox Bug Fix --*/
-.carousel-item {
-  transition: -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease;
-  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
-  -webkit-backface-visibility: visible;
-  backface-visibility: visible;
-}
 
 /*--- Fixed Background Image --*/
 figure {
